@@ -1,0 +1,45 @@
+<h1 style="text-align:center;">Estudiantes</h1>
+
+<div class="container" style="padding: 1%; width: 100%">
+  <table class="table table-striped table-bordered table-hover" style="border: solid black; width: 100%">
+    <thead style="background-color: #373a3c; color: white;">
+      <tr>
+        <th style="text-align:center;">ID</th>
+        <th style="text-align:center;">Nombre</th>
+        <th style="text-align:center;">Apellido</th>
+        <th style="text-align:center;">Correo</th>
+        <th style="text-align:center;">Edad</th>
+        <th style="text-align:center;">Carrera</th>
+        <th style="text-align:center;">PAPA</th>
+        <th style="text-align:center;" colspan="3">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td style="text-align:center;"><%= student.id %></td>
+          <td style="text-align:center;"><%= student.name %></td>
+          <td style="text-align:center;"><%= student.lastname %></td>
+          <td style="text-align:center;"><%= student.email %></td>
+          <td style="text-align:center;"><%= student.age %></td>
+          <td style="text-align:center;"><%= student.career %></td>
+          <td style="text-align:center;"><%= '%.1f' % student.PAPA %></td>
+          <td style="text-align:center;"><%= link_to 'Ver', student %></td>
+          <td style="text-align:center;"><%= link_to 'Editar', edit_student_path(student) %></td>
+          <td style="text-align:center;"><%= link_to 'Destruir', student, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div style="text-align:center;">
+  <%= will_paginate @students, renderer: BootstrapPagination::Rails,
+    :class => "pagination", :previous_label => "Atrás", :next_label => "Adelante", :inner_window => 1, :outer_window => 1,
+    :param_name => 'página'
+  %>
+</div>
+
+</br>
+
+<%= link_to 'New Student', new_student_path %>

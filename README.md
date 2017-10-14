@@ -44,7 +44,7 @@ En seguida a esto, se debe modificar la vista (html) del controlador que estamos
 </div>
 ```
 
-Como se puede observar, en el ```html <tbody> ``` se realiza la iteración sobre cada uno de los registros guardados en el controlador. Además, al terminar la tabla se agrega los controles de paginación de la gema simplemente agregando: ```html <%= will_paginate @students %> ```, lo demás es personalización de estilos.
+Como se puede observar, en el ``` <tbody> ``` se realiza la iteración sobre cada uno de los registros guardados en el controlador. Además, al terminar la tabla se agrega los controles de paginación de la gema simplemente agregando: ``` <%= will_paginate @students %> ```, lo demás es personalización de estilos.
 
 También, se pueden realizar muchos tipos de consultas para un mejor manejo de los datos:
 * Ordenamiento:

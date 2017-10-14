@@ -57,7 +57,8 @@ Esto ordenará todos los datos de clase 'Student' y los ordenará de forma ascen
 ```ruby
  @students = Student.paginate(:page => params[:page], per_page: 10).order('id ASC').select('id name lastname')
 ```
-Aquí, ordenará de forma ascendente los id de todos los estudiantes y guardará solamente los atributos: id, nombre y apellido. ###### Se debe tener en cuenta que hay que modificar <table> en el html.
+Aquí, ordenará de forma ascendente los id de todos los estudiantes y guardará solamente los atributos: id, nombre y apellido. 
+###### Se debe tener en cuenta que hay que modificar ``` <table> ``` en el html.
 
 * Condiciones:
 ```ruby
